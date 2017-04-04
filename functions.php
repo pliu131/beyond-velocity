@@ -1125,15 +1125,23 @@ if ( ! function_exists( 'quark_set_number_woocommerce_products' ) ) {
 }
 
 // Create Widget Area
-if ( function_exists('register_sidebar') )
+if ( function_exists('register_sidebar') ) {
   register_sidebar(array(
     'name' => 'Header Contact Widget',
     'before_widget' => '<div class = "header-contact-widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
-  )
-);
+  ));
+
+  register_sidebar(array(
+    'name' => 'Contact Form',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ));
+}
 
 // Add Custom Fields
 if(function_exists("register_field_group"))
@@ -1262,15 +1270,45 @@ if(function_exists("register_field_group"))
 				'media_upload' => 'yes',
 			),
 			array (
-				'key' => 'field_58d529d7f6e4f',
-				'label' => 'Footer Script',
-				'name' => 'footer_script',
+				'key' => 'field_58e3c40d61f99',
+				'label' => 'Full Section Title 2',
+				'name' => 'full_section_title_2',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_58e3c41a61f9a',
+				'label' => 'Full Section Text 2',
+				'name' => 'full_section_text_2',
+				'type' => 'wysiwyg',
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'yes',
+			),
+			array (
+				'key' => 'field_58e3c42161f9b',
+				'label' => 'Full Section Image 2',
+				'name' => 'full_section_image_2',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_58e3c43bbc89a',
+				'label' => 'Form Script',
+				'name' => 'form_script',
 				'type' => 'textarea',
 				'default_value' => '',
 				'placeholder' => '',
 				'maxlength' => '',
 				'rows' => '',
-				'formatting' => 'none',
+				'formatting' => 'html',
 			),
 		),
 		'location' => array (
@@ -1294,4 +1332,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
-
+function google_fonts() {
+    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Lato:300,400,700' );
+}
+add_action( 'wp_enqueue_scripts', 'google_fonts' );
