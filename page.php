@@ -61,7 +61,7 @@ get_header(); ?>
             <div class="col grid_12_of_12">
 
               <div class="section__content">
-                <h2 class="section__title text--uppercase">
+                <h2 class="section__title">
                   <?php echo $full_title ?>
                 </h2>
                 <!-- 20px -->
@@ -75,40 +75,39 @@ get_header(); ?>
       </div>
     <?php endif; ?>
 
-    <div class="row">
+    <div class="section-table">
       <?php if ($half_title_1 && $half_text_1): ?>
-        <div class="col grid_6_of_12">
-
-          <?php if ($half_image_1) : ?>
-            <div class="section section--half section--secondary section--image text--center" style="background-image: url(<?php echo $half_image_1 ?>);">
-              <div class="section__overlay"></div>
-            <?php else: ?>
-              <div class="section section--half section--secondary text--center">
-              <?php endif; ?>
-              <div class="section__content">
-                <h2 class="section__title text--uppercase">
-                  <?php echo $half_title_1; ?>
-                </h2>
-                <!-- 20px -->
-                <div class="section__text">
-                  <?php echo $half_text_1; ?>
-                </div>
-              </div><!-- .section_content --> 
-            </div><!-- .section --> 
-          </div><!-- .col.grid_6_of_12 --> 
+        <?php if ($half_image_1) : ?>
+          <div class="section section--half section--secondary section--image">
+            <div class="section__image" style="background-image: url(<?php echo $half_image_1 ?>);"></div>
+            <div class="section__overlay"></div>
+          <?php else: ?>
+            <div class="section section--half section--secondary">
+            <?php endif; ?>
+            <div class="section__content">
+              <h2 class="section__title">
+                <?php echo $half_title_1; ?>
+              </h2>
+              <!-- 20px -->
+              <div class="section__text">
+                <?php echo $half_text_1; ?>
+              </div>
+            </div><!-- .section_content --> 
+          </div><!-- .section --> 
         <?php endif; ?>
 
-        <?php if ($half_title_2 && $half_text_2): ?>
-        <div class="col grid_6_of_12">
+        <div class="section--spacer"></div>
 
+        <?php if ($half_title_2 && $half_text_2): ?>
           <?php if ($half_image_2) : ?>
-            <div class="section section--half section--secondary section--image text--center" style="background-image: url(<?php echo $half_image_2 ?>);">
+            <div class="section section--half section--secondary section--image">
+              <div class="section__image" style="background-image: url(<?php echo $half_image_2 ?>);"></div>
               <div class="section__overlay"></div>
             <?php else: ?>
-              <div class="section section--half section--secondary text--center">
+              <div class="section section--half section--secondary">
               <?php endif; ?>
               <div class="section__content">
-                <h2 class="section__title text--uppercase">
+                <h2 class="section__title">
                   <?php echo $half_title_2; ?>
                 </h2>
                 <!-- 20px -->
@@ -117,49 +116,54 @@ get_header(); ?>
                 </div>
               </div><!-- .section_content --> 
             </div><!-- .section --> 
-          </div><!-- .col.grid_6_of_12 --> 
-        <?php endif; ?>
-      </div><!-- .row -->
+          <?php endif; ?>
+        </div><!-- .section-table -->
 
-    <?php if ($full_title_2 && $full_text_2): ?>
-    <?php if ($full_image_2) : ?>
-      <div class="section section--full section--primary section--image text--center" style="background-image: url(<?php echo $full_image_2 ?>);">
-        <div class="section__overlay"></div>
-      <?php else: ?>
-        <div class="section section--full section--primary text--center">
-        <?php endif; ?>
-        <div class="site-content">
-          <div class="row">
-            <div class="col grid_12_of_12">
+        <div class="row">
+          <div class="col grid_12_of_12">
 
-              <div class="section__content">
-                <h2 class="section__title text--uppercase">
-                  <?php echo $full_title_2 ?>
-                </h2>
-                <!-- 20px -->
-                <div class="section__text">
-                  <?php echo $full_text_2 ?>
+            <?php if ($full_title_2 && $full_text_2): ?>
+              <?php if ($full_image_2) : ?>
+                <div class="section section--full section--primary section--image text--center" style="background-image: url(<?php echo $full_image_2 ?>);">
+                  <div class="section__overlay"></div>
+                <?php else: ?>
+                  <div class="section section--full section--primary text--center">
+                  <?php endif; ?>
+                  <div class="site-content">
+                    <div class="row">
+                      <div class="col grid_12_of_12">
+
+                        <div class="section__content">
+                          <h2 class="section__title">
+                            <?php echo $full_title_2 ?>
+                          </h2>
+                          <!-- 20px -->
+                          <div class="section__text">
+                            <?php echo $full_text_2 ?>
+                          </div>
+                        </div><!-- .section_content --> 
+                      </div><!-- .section --> 
+                    </div>
+                  </div>
                 </div>
-              </div><!-- .section_content --> 
-            </div><!-- .section --> 
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
-
-    <?php $form_script = get_field('form_script'); ?>
-    <?php if ($form_script) : ?>
-      <div class="row">
-        <div class="col grid_12_of_12">
-          <div class="section section--primary section--full">
-            <div class="section__content">
-              <h2 class="section__title text--center">Contact Us</h2>
-              <?php echo $form_script; ?>
+              <?php endif; ?>
             </div>
           </div>
-        </div>
-      </div>
-    <?php endif; ?>
-    </div> <!-- /#primary.site-content -->
 
-    <?php get_footer(); ?>
+          <?php $form_script = get_field('form_script'); ?>
+          <?php if ($form_script) : ?>
+            <div class="row">
+              <div class="col grid_12_of_12">
+                <div class="section section--primary section--full">
+                  <div class="section__content">
+                    <h2 class="section__title text--center">Contact Us</h2>
+                    <?php echo $form_script; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+
+        </div> <!-- /#primary.site-content -->
+
+        <?php get_footer(); ?>

@@ -98,7 +98,7 @@
 					<?php echo the_field('header_tagline') ?> 
 
 					<?php if ( is_front_page() ) : ?>
-						<a class="banner__contact" href="#">Contact Us Today</a>
+						<a class="banner__contact" href="<?php echo get_site_url() ?>/contact">Contact Us Today</a>
 					<?php endif; ?>
 				</p>
 				<?php endif ?>

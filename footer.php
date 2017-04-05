@@ -22,27 +22,27 @@
 					<h3 class="social__title">Follow Us</h3>
 
 					<ul class="social__links">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter"></i></a></li>
-						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-						<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://twitter.com/BVelocityllc"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://plus.google.com/u/0/105243096649190546561"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="https://www.linkedin.com/company/beyond-velocity"><i class="fa fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 			</div><!-- .col.grid_6_of_12 -->
 
 			<div class="col grid_6_of_12">
-				<form class="mailchimp" action="">
-					<div class="mailchimp__email">
-						<input class="form-input" type="email" placeholder="Sign up for our newsletter">
-					</div>
+				<!-- SharpSpring Form for Newsletter Form - Home Page  -->
+<script type="text/javascript">
+    var ss_form = {'account': 'MzawMDG1tLA0BwA', 'formID': 'MzVOTU00TU3VNTRNTtY1MUpJ1rUwSTXVNUwzSDEzTEtLM0szBwA'};
+    ss_form.width = '100%';
+    ss_form.height = '1000';
+    ss_form.domain = 'app-3QNA19X2XQ.marketingautomation.services';
+    ss_form.hidden = {'_usePlaceholders': true}; // Modify this for sending hidden variables, or overriding values
+</script>
+<script type="text/javascript" src="https://koi-3QNA19X2XQ.marketingautomation.services/client/form.js?ver=1.1.1"></script>
 
-					<div class="mailchimp__submit">
-						<input type="submit">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+</div>
+</div>
+</div>
 </div>
 
 

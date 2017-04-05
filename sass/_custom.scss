@@ -12,8 +12,8 @@ $color__callout: $teal-green;
 
 @mixin image-box {
   background-size: cover !important;
-  background-repeat: no-repeat !important;;
-  background-position: center !important;;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 @mixin clearfix {
@@ -100,6 +100,45 @@ a {
   }
 }
 
+// .col--full {
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     z-index: -1;
+//     left: 0;
+//     background: #fff;
+//   }
+// }
+
+// .col--full-second {
+//   &:before {
+//     left: 49.2%;
+//   }
+// }
+
+.section-table {
+  .section--spacer {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: table;
+    width: 100%;
+
+    .section--half {
+      display: table-cell;
+      width: 49.2%;
+    }
+
+    .section--spacer {
+      display: table-cell;
+      width: 1.6%;
+    }
+  }
+}
+
 // .page-template-default {}
 // Banner Styles
 #bannercontainer {
@@ -127,7 +166,7 @@ a {
     }
 
     &__title {
-      font-size: 28px;
+      font-size: 40px;
       font-weight: 300;
     }
 
@@ -218,6 +257,9 @@ a {
     position: relative;
     width: 100%;
     height: 75px;
+    display: block;
+    font-size: 75px;
+    color: black;
   }
 
   &__image {
@@ -232,18 +274,24 @@ a {
     width: 33.333333%
   }
 
-  @media screen and (min-width: 901px) {
-    padding: 3rem;
-    width: 20%;
+  @media screen and (min-width: 960px) {
+    padding: 2rem;
+    width: 16.667%;
 
-    &__title {
-      font-size: 18px;
-    }
+    // &__title {
+    //   font-size: 18px;
+    // }
   }
 }
 
 
 // Section Styles
+.text--center {
+  ul, ol {
+    padding: 0;
+  }
+}
+
 .section {
   position: relative;
   font-weight: 300;
@@ -291,15 +339,26 @@ a {
   &--callout {
     background-color: $color__callout;  
   }
+
+  &__image {
+    @include image-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0;
+    left: 0;
+  }
   
 
   &__overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    // background-color: #061832;
     background-color: rgba(6,24,50, 0.8); // change to rgb and set to 20% opacity
     z-index: 10;
+    top: 0;
+    left: 0;
   }
 
   &__content {
@@ -308,10 +367,6 @@ a {
     z-index: 20;
     margin-bottom: 0;
     font-size: 18px;
-
-    ul, ol {
-      display: inline-block;
-    }
 
     p, a, ul, ol, span {
       font-size: inherit;
